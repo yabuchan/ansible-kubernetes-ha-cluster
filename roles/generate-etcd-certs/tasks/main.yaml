@@ -1,3 +1,15 @@
+- name: Install cfssl and cfssljson
+  get_url:
+    url: https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
+    dest: /usr/local/bin/cfssl
+    mode: 0755
+
+- name: Install cfssl and cfssljson
+  get_url:
+    url: https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
+    dest: /usr/local/bin/cfssljson
+    mode: 0755
+
 - name: Copy ca-cert config files
   copy:
     src: certs/

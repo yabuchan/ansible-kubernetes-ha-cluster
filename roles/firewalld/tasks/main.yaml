@@ -1,3 +1,15 @@
+- name: Install firewalld
+  yum:
+    name: firewalld
+    state: installed
+
+- name: enable firewalld
+  systemd: 
+    name: firewalld 
+    enabled: yes
+
+
+
 - name: Start firewalld
   service: 
     name: firewalld 
@@ -9,12 +21,6 @@
     daemon_reload: yes
     name: firewalld
     enabled: yes
-
-- name: Install firewalld
-  shell: yum install firewalld
-
-- name: Enable firewalld
-  shell: systemctl enable firewalld
 
 - name: Open port 6443
   shell: firewall-cmd --permanent --add-port=6443/tcp
