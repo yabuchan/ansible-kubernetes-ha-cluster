@@ -25,6 +25,16 @@
   args:
     executable: /bin/bash
 
+- name: DEBUGGING1
+  shell: |
+    whoami
+    echo $PATH
+
+- name: DEBUGGING2
+  shell: |
+    cfssl --version
+    cfssljson --help
+
 - name: Generate etcd client certs
   shell: |
     cd /etc/kubernetes/pki/etcd
