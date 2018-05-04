@@ -1,17 +1,17 @@
 [all-vms]
-ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=centos
-ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=centos
-ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=centos
+ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=root
+ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=root
+ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=root
 
 [all-masters]
-ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=centos
-ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=centos
-ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=centos
+ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=root
+ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=root
+ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=root
 
 [all-workers]
-ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=centos
-ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=centos
-ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=centos
+ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=root
+ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=root
+ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=root
 
 [all-masters:vars]
 kubernetes_version=1.10.0
@@ -19,7 +19,7 @@ kubelet_version=1.10.0-0
 kubeadm_version=1.10.0
 etcd_version=v3.1.12
 pod_network_cidr=10.244.0.0/16
-virtual_ip=<vip>
+virtual_ip=0.0.0.0
 network_interface=<eth0>
 smoke_test_node_port=31111
 

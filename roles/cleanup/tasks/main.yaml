@@ -9,6 +9,7 @@
     rm -rf /var/lib/kubelet/*
     rm -rf /etc/keepalived/*
     rm -rf /etc/cni/
+    rm -rf /etc/kubernetes/pki/etcd/*
     rm -r /var/lib/etcd/member
     ip link delete cni0
     ip link delete flannel.1
