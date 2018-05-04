@@ -1,18 +1,17 @@
 [all-vms]
-<hostname1> ansible_usehost=<ip>  ansible_user=root
-<hostname2> ansible_usehost=<ip>  ansible_user=root
-<hostname3> ansible_usehost=<ip>  ansible_user=root
-<hostname4> ansible_usehost=<ip>  ansible_user=root
-<hostname5> ansible_usehost=<ip>  ansible_user=root
+ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=centos
+ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=centos
+ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=centos
 
 [all-masters]
-<hostname1> ansible_usehost=<ip>  ansible_user=root
-<hostname2> ansible_usehost=<ip>  ansible_user=root
-<hostname3> ansible_usehost=<ip>  ansible_user=root
+ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=centos
+ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=centos
+ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=centos
 
 [all-workers]
-<hostname4> ansible_usehost=<ip>  ansible_user=root
-<hostname5> ansible_usehost=<ip>  ansible_user=root
+ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=centos
+ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=centos
+ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=centos
 
 [all-masters:vars]
 kubernetes_version=1.10.0
