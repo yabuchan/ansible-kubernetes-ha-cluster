@@ -1,13 +1,13 @@
 - name: Install cfssl and cfssljson
   get_url:
     url: https://pkg.cfssl.org/R1.2/cfssl_linux-amd64
-    dest: /usr/local/bin/cfssl
+    dest: /usr/bin/cfssl
     mode: 0755
 
 - name: Install cfssl and cfssljson
   get_url:
     url: https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
-    dest: /usr/local/bin/cfssljson
+    dest: /usr/bin/cfssljson
     mode: 0755
 
 - name: Copy ca-cert config files
@@ -24,16 +24,6 @@
     cfssl gencert -initca ca-csr.json | cfssljson -bare ca -
   args:
     executable: /bin/bash
-
-- name: DEBUGGING1
-  shell: |
-    whoami
-    echo $PATH
-
-- name: DEBUGGING2
-  shell: |
-    cfssl --version
-    cfssljson --help
 
 - name: Generate etcd client certs
   shell: |
