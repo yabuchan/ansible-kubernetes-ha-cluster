@@ -5,4 +5,4 @@
 # You may manually do above two tasks instead of running this script.
 
 ssh-keygen -t rsa -b 2048 -f .ssh/id_rsa # Generate ssh key
-ansible-playbook -i ../inventory/mycluster playbooks/copy-ssh-key-id.yaml
+ansible-playbook -i ../inventory/mycluster ../playbooks/copy-ssh-key-id.yaml
