@@ -1,17 +1,17 @@
 [all-vms]
-ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=root
-ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=root
-ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=root
+ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=172.31.29.217  ansible_user=root
+ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=172.31.17.148  ansible_user=root
+ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=172.31.27.189  ansible_user=root
 
 [all-masters]
-ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=root
-ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=root
-ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=root
+ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=172.31.29.217  ansible_user=root
+ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=172.31.17.148  ansible_user=root
+ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=172.31.27.189  ansible_user=root
 
 [all-workers]
-ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=18.236.83.228  ansible_user=root
-ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=18.236.175.146  ansible_user=root
-ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=35.165.131.100  ansible_user=root
+ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=172.31.29.217  ansible_user=root
+ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=172.31.17.148  ansible_user=root
+ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=172.31.27.189  ansible_user=root
 
 [all-masters:vars]
 kubernetes_version=1.10.0
