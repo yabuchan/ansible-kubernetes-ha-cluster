@@ -16,10 +16,10 @@ kubelet_version=1.10.0-0
 kubeadm_version=1.10.0
 etcd_version=v3.1.12
 pod_network_cidr=10.244.0.0/16
-virtual_ip=0.0.0.0
+virtual_ip=172.31.37.150
 network_interface=<eth0>
 smoke_test_node_port=31111
 
 [all-vms:vars]
-virtual_ip=0.0.0.0
+virtual_ip=172.31.37.150
 kubelet_version=1.9.6-0
