@@ -1,7 +1,23 @@
-- name: Generate SSH keys
-  shell: ssh-keygen -b 2048 -t rsa -f /root/.ssh/id_rsa -q -N ""
-  args:
-    creates: /root/.ssh/id_rsa
 - name: copy-ssh-key-id
   shell: |
-    cat /root/.ssh/id_rsa.pub | ssh -o "StrictHostKeyChecking no" -i ~/.ssh/csi-aws-west-2.pem centos@ec2-18-236-83-228.us-west-2.compute.amazonaws.com "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+    mkdir -p /root/.ssh
+
+- name: Sending private key to severs
+  copy:
+    src: .ssh/id_rsa
+    dest: /root/.ssh/id_rsa
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Sending public key to severs
+  copy:
+    src: .ssh/id_rsa.pub
+    dest: /root/.ssh/id_rsa.pub
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Adding common private key to authorized_keys
+  copy:
+    cat .ssh/id_rsa.pub >> authorized_keys
