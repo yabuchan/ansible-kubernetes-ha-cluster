@@ -19,5 +19,5 @@
     mode: 0644
 
 - name: Adding common private key to authorized_keys
-  copy:
+  shell: |
     cat .ssh/id_rsa.pub >> authorized_keys
