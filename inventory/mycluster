@@ -5,11 +5,8 @@ ip-172-31-39-24.us-west-2.compute.internal ansible_usehost=172.31.39.24  ansible
 
 [all-masters]
 ip-172-31-37-150.us-west-2.compute.internal ansible_usehost=172.31.37.150  ansible_user=root
-# ec2-18-236-175-146.us-west-2.compute.amazonaws.com ansible_usehost=172.31.17.148  ansible_user=root
-# ec2-35-165-131-100.us-west-2.compute.amazonaws.com ansible_usehost=172.31.27.189  ansible_user=root
 
 [all-workers]
-# ec2-18-236-83-228.us-west-2.compute.amazonaws.com ansible_usehost=172.31.29.217  ansible_user=root
 ip-172-31-45-119.us-west-2.compute.internal ansible_usehost=172.31.45.119  ansible_user=root
 ip-172-31-39-24.us-west-2.compute.internal ansible_usehost=172.31.39.24  ansible_user=root
 
