@@ -1,6 +1,6 @@
 - name: copy-ssh-key-id
   shell: |
-    mkdir -p /root/.ssh
+    mkdir -p .ssh
 
 - name: Sending private key to severs
   copy:
