@@ -1,0 +1,27 @@
+[all-vms]
+<hostname1> ansible_usehost=<ip1>  ansible_user=root
+<hostname2> ansible_usehost=<ip2>  ansible_user=root
+<hostname3> ansible_usehost=<ip3>  ansible_user=root
+<hostname4> ansible_usehost=<ip4>  ansible_user=root
+
+[all-masters]
+<hostname1> ansible_usehost=<ip1> ansible_user=root
+<hostname2> ansible_usehost=<ip2> ansible_user=root
+
+[all-workers]
+<hostname3> ansible_usehost=<ip3>  ansible_user=root
+<hostname4> ansible_usehost=<ip4>  ansible_user=root
+
+[all-masters:vars]
+kubernetes_version=1.10.0
+kubelet_version=1.10.0-0
+kubeadm_version=1.10.0
+etcd_version=v3.1.12
+pod_network_cidr=10.244.0.0/16
+virtual_ip=<ip1>
+network_interface=<eth0>
+smoke_test_node_port=31111
+
+[all-vms:vars]
+virtual_ip=<ip1>
+kubelet_version=1.9.6-0
