@@ -1,4 +1,4 @@
-- hosts: all-masters
+- hosts: all-vms
   become: yes
   gather_facts: no
   ignore_errors: yes
