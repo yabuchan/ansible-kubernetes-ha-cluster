@@ -6,7 +6,7 @@
 
 mkdir -p ../_ssh && ssh-keygen -t rsa -b 2048 -N "" -f ../_ssh/id_rsa # Generate ssh key
 
-if [ ~/.ssh/id_rsa does not exist ]; then
+if [ ~/.ssh/id_rsa ]; then
    mkdir -p ~/.ssh
    cp ../_ssh/id_rsa ~/.ssh/id_rsa
    cp ../_ssh/id_rsa.pub ~/.ssh/id_rsa.pub
