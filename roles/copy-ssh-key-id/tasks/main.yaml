@@ -4,20 +4,21 @@
 
 - name: Sending private key to severs
   copy:
-    src: _ssh/id_rsa
+    src: ../_ssh/id_rsa
     dest: /root/.ssh/id_rsa
     owner: root
     group: root
-    mode: 0644
+    mode: 0400
 
 - name: Sending public key to severs
   copy:
-    src: _ssh/id_rsa.pub
+    src: ../_ssh/id_rsa.pub
     dest: /root/.ssh/id_rsa.pub
     owner: root
     group: root
-    mode: 0644
+    mode: 0400
 
 - name: Adding common private key to authorized_keys
   shell: |
-    cat /root.ssh/id_rsa.pub >> authorized_keys
+    cat /root/.ssh/id_rsa.pub >> /root/.ssh/authorized_keys
+    cat /root/.ssh/id_rsa.pub >> /home/centos/.ssh/authorized_keys
