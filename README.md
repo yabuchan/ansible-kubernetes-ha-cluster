@@ -3,15 +3,15 @@
 This repository provides Ansible Playbooks To setup Kubernetes HA on Redhat Enterprise Linux 7. The playbooks are mainly inspired by Kubeadm documentation and other ansible tentatives on github. The playbooks could be used separately or as one playbook for a fully fledged HA cluster. 
 
 #Prerequisites: 
-### 1. More than two machines (or VMs) where k8s cluster is deployed. 
-### 2. You have ssh access to the machines.
-### 3. You can access to machines with private IP address.
+1. More than two machines (or VMs) for deploying k8s cluster. 
+2. You have ssh access to the machines.
+3. You can access to machines with private IP address.
 
 Suppoted OS for machines:
  - CentOS 7
- - RHEL 7.2+
+ - RHEL 7.2+ (Only tested on CentOS 7)
 
-### 4. Ansible is installed on your laptop.
+4. Ansible is installed on your laptop.
 ```
 pip install epel-release ansible
 ```
@@ -35,6 +35,7 @@ cd scripts
 ```
 Run `./setup-myCluster.sh -h` for more details.
 
+
 ##### (Option 2) Manually create inventory/mycluster and modify it. 
 Declare your machines such as:
 ```
@@ -49,11 +50,11 @@ There are different groups being defined and used, you can reuse mycluster file 
 ```
 See inventory/mycluster-sample for more details.
 
-### 3. Setup ssh access:
-3.1 Ssh access from master to workers without password or pem file.
-3.2 Ssh access from first master to the other masters without password or pem file.
+### 3. Setup ssh access.
+* Ssh access from master to workers without password or pem file.
+* Ssh access from first master to the other masters without password or pem file.
 
-There are two options for 5.1 and 5.2:
+There are two options:
 ##### (Option 1) Do it manually using copy-ssh-id. ref: https://www.ssh.com/ssh/copy-id
 You can check that you can ping all the machines:
 ```
