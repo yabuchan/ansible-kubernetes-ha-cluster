@@ -2,7 +2,7 @@
 # setup-myCluster create myCluster
 # Only centos 7 is supported, although it may work by slightly changing roles/copy-ssh-key-id.
 
-INVENTORY=../inventory/myCluster
+INVENTORY=../inventory/mycluster
 
 while getopts "m:w:o:v:i:c:h" arg; do
   case $arg in
