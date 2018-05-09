@@ -51,8 +51,8 @@ There are different groups being defined and used, you can reuse mycluster file 
 See inventory/mycluster-sample for more details.
 
 ### 3. Setup ssh access.
-* Ssh access from master to workers without password or pem file.
-* Ssh access from first master to the other masters without password or pem file.
+* Ssh access from master to workers without password or pem file as root user (i.e. ssh root@WORKER_MACHINE from root@MASTER_MACHINE).
+* Ssh access from first master to the other masters without password or pem file as root user (i.e. ssh root@WORKER_MACHINE from root@MASTER_MACHINE).
 
 There are two options:
 ##### (Option 1) Do it manually using copy-ssh-id. ref: https://www.ssh.com/ssh/copy-id
@@ -62,6 +62,7 @@ ansible -m ping all -i inventory/mycluster
 ```
 
 ##### (Option 2) Use script:
+In this option, user: `centos` has been already created and `centos` user is in wheel group (i.e. `centos` can exec sudo).
 ```
 cd scripts
 ./set-ssh-key.sh -k ~/.ssh/hoge.hoge.pem
