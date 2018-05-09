@@ -11,6 +11,8 @@ Suppoted OS for machines:
  - CentOS 7
  - RHEL 7.2+ (Only tested on CentOS 7)
 
+Note: Do not install libraries such as docker or firewalld manually, which may cause version dependency errors.
+
 4. Ansible is installed on your laptop.
 ```
 pip install epel-release ansible
