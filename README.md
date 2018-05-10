@@ -3,8 +3,9 @@
 This repository provides Ansible Playbooks To setup Kubernetes HA on Redhat Enterprise Linux 7. The playbooks are mainly inspired by Kubeadm documentation and other ansible tentatives on github. The playbooks could be used separately or as one playbook for a fully fledged HA cluster. 
 
 #Prerequisites: 
-1. More than two machines (or VMs) for deploying k8s cluster. 
-2. You have ssh access to the machines.
+1. one or more machines (or VMs) for deploying k8s cluster. 
+2. user `centos` is already created, and it privilege for sudo.
+2. You have ssh access to `centos` user the machines.
 3. You can access to machines with private IP address.
 
 Suppoted OS for machines:
@@ -22,6 +23,7 @@ or
 brew install ansible
 ```
 
+
 # Getting started:
 ### 1. git clone
  ```
@@ -33,10 +35,12 @@ brew install ansible
 ##### (Option 1) Use script:
 ```
 cd scripts
-./setup-myCluster.sh -m IP_ADDRESS_1,IP_ADDRESS_2, -w IP_ADDRESS_3,IP_ADDRESS_4, -v IP_ADDRESS_5
+./setup-myCluster.sh -m IP_ADDRESS_1,IP_ADDRESS_2 -w IP_ADDRESS_3,IP_ADDRESS_4 -v IP_ADDRESS_5
 ```
+- IP_ADDRESS_1,IP_ADDRESS_2: are ip address of machine to set up as master 
+-  IP_ADDRESS_3,IP_ADDRESS_4: are ip address of machine to set up as worker
 Run `./setup-myCluster.sh -h` for more details.
-
+If you install cluster to single machine, include only master.
 
 ##### (Option 2) Manually create inventory/mycluster and modify it. 
 Declare your machines such as:
