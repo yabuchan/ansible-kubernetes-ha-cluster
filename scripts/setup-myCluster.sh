@@ -46,12 +46,12 @@ if [ -z "${MASTERS+xxx}" ]; then
     echo "master IP address: $MASTERS"
 fi
 
-if [ -z "${WORKERS+xxx}" ]; then
-    echo -e "Worker nodes must be included. Please type list of IP address, splitted by comma: "
-    echo "(e.g. 172.16.0.1,172.16.0.2)"
-    read WORKERS
-    echo "worker IP address: $WORKERS"
-fi
+#if [ -z "${WORKERS+xxx}" ]; then
+#    echo -e "Worker nodes must be included. Please type list of IP address, splitted by comma: "
+#    echo "(e.g. 172.16.0.1,172.16.0.2)"
+#    read WORKERS
+#    echo "worker IP address: $WORKERS"
+#fi
 
 if [ -z "${VIP+xxx}" ]; then
     echo -e "Virtual IP must be included. Please type an IP address."
