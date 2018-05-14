@@ -1,4 +1,4 @@
-- name: copy-ssh-key-id
+- name: copy-ssh-private-key
   shell: |
     mkdir -p .ssh
 

@@ -4,7 +4,7 @@
 
 INVENTORY=../inventory/mycluster
 
-while getopts "m:w:o:v:i:c:h" arg; do
+while getopts "m:o:v:w:i:c:h" arg; do
   case $arg in
     h | --help)
       echo -e "Style:";
@@ -13,9 +13,9 @@ while getopts "m:w:o:v:i:c:h" arg; do
       echo -e "  setup-myCluster.sh -m 172.16.0.1,172.16.0.2 -w 172.16.0.3,172.16.0.4 -v 172.16.0.100 \n"; 
       echo -e "Required Params:";
       echo -e "    -m      Comma seperated list of IP address to install k8s master.";
-      echo -e "    -w      Comma seperated list of IP address to install k8s worker.";
       echo -e "    -v      Virtual IP address of k8s master. i.e. IP address of loadbalancer of k8s master. If no balancer exists set one of master's IP address.\n";
       echo -e "Options:";
+      echo -e "    -w      Comma seperated list of IP address to install k8s worker.";
       echo -e "    -i      network interface name. Default is eth0.";
       echo -e "    -c      cidr of overlayed network for containers. Default is 10.0.0.0/16.";
       echo -e "    -h      help"; 
@@ -45,13 +45,6 @@ if [ -z "${MASTERS+xxx}" ]; then
     read MASTERS
     echo "master IP address: $MASTERS"
 fi
-
-#if [ -z "${WORKERS+xxx}" ]; then
-#    echo -e "Worker nodes must be included. Please type list of IP address, splitted by comma: "
-#    echo "(e.g. 172.16.0.1,172.16.0.2)"
-#    read WORKERS
-#    echo "worker IP address: $WORKERS"
-#fi
 
 if [ -z "${VIP+xxx}" ]; then
     echo -e "Virtual IP must be included. Please type an IP address."

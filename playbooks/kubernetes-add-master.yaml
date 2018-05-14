@@ -1,0 +1,16 @@
+- hosts: all-masters
+  become: yes
+  roles:
+    - kubeadm-init-prep
+
+
+- hosts: all-masters
+  become: yes
+  roles:
+    - kubeadm-init-other-masters
+
+
+- hosts: all-masters
+  become: yes
+  roles:
+    - config-scheduler-and-controller

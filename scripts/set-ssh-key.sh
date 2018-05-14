@@ -37,7 +37,7 @@ sed -i 's/root/centos/g' ../inventory/mycluster-init
 cd ../ 
 if [ -z "${PRIVATE_KEY+xxx}" ]; 
 then
-    ansible-playbook -i inventory/mycluster-init playbooks/copy-ssh-key-id.yaml --ask-pass
+    ansible-playbook -i inventory/mycluster-init playbooks/copy-ssh-key-id.yaml --ask-pass --ask-su-pass
 else
     ansible-playbook -i inventory/mycluster-init playbooks/copy-ssh-key-id.yaml --private-key=$PRIVATE_KEY
 fi
