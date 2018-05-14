@@ -31,6 +31,12 @@
 
 - replace:
     path: /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+    regexp: 'KUBELET_AUTHZ_ARGS='
+    replace: 'KUBELET_AUTHZ_ARGS=--authentication-token-webhook '
+    backup: no
+
+- replace:
+    path: /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
     regexp: 'KUBELET_KUBECONFIG_ARGS='
     replace: 'KUBELET_KUBECONFIG_ARGS=--fail-swap-on=false '
     backup: no
