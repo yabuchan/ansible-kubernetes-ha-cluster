@@ -1,17 +1,17 @@
-- import_playbook: docker.yaml
-- import_playbook: kubeadm.yaml
-- import_playbook: setup-firewalld.yaml
+- import_playbook: docker.yaml  # OK
+- import_playbook: kubeadm.yaml # OK
+- import_playbook: setup-firewalld.yaml # OK
 
- - import_playbook: ha-etcd.yaml
+- import_playbook: _add-ha-etcd.yaml # Changed
 
-- import_playbook: keepalived.yaml
+- import_playbook: keepalived.yaml # OK
 
-- import_playbook: kubernetes-add-masters.yaml
+- import_playbook: kubernetes-add-masters.yaml # Changed
 
-- import_playbook: podpreset.yaml
+- import_playbook: podpreset.yaml # ???
 
-- import_playbook: kubernetes-add-workers.yaml
+# - import_playbook: kubernetes-add-workers.yaml Only for worker
 # - import_playbook: encrypting-secrets.yaml
-- import_playbook: heapster.yaml
+# - import_playbook: heapster.yaml Only for master
 
 - import_playbook: smoke-test.yaml
