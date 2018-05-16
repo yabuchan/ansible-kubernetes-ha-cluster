@@ -12,6 +12,6 @@
 
 # - import_playbook: kubernetes-add-workers.yaml Only for worker
 # - import_playbook: encrypting-secrets.yaml
-# - import_playbook: heapster.yaml Only for master
+# - import_playbook: heapster.yaml Only for first master
 
 - import_playbook: smoke-test.yaml

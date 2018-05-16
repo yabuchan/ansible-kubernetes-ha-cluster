@@ -8,4 +8,4 @@
 #  2.2 Setup ssh access from first master to the other masters (user: root)
 
 cd ../
-ansible-playbook -i inventory/mycluster playbooks/cleanup.yaml
+ansible-playbook -i inventory/mycluster playbooks/cleanup-all-vms.yaml
