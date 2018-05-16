@@ -32,3 +32,4 @@
     state: restarted
     daemon_reload: yes
     enabled: yes
+  when: "groups['all-masters'][0] != inventory_hostname"
