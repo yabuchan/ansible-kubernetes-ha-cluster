@@ -29,7 +29,6 @@
 - name: restart docker
   systemd: 
     name: docker 
-    state: restarted
+    state: started # restarted, If restarted on already existing master node, the node cannot be accessed with ssh. If you stopped docker, machine must be stop & boot again.   
     daemon_reload: yes
     enabled: yes
-  when: "groups['all-masters'][0] != inventory_hostname"
