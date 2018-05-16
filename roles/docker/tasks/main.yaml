@@ -29,6 +29,6 @@
 - name: restart docker
   systemd: 
     name: docker 
-    state: started # restarted, If restarted on already existing master node, the node cannot be accessed with ssh. If you stopped docker, machine must be stop & boot again.   
+    state: started # restarted, If restarted on already existing machines (master & worker node), the machines cannot be accessed with ssh. If you stopped docker, machine must be stop & boot again.   
     daemon_reload: yes
     enabled: yes
