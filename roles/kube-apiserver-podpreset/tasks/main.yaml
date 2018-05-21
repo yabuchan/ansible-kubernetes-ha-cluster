@@ -15,8 +15,10 @@
     replace: '--admission-control=PodPreset,'
     backup: no
 
-- name: Add runtime-config to kube-apiserver
+- name: Add service-node-port-range to kube-apiserver
   lineinfile:
     dest: /etc/kubernetes/manifests/kube-apiserver.yaml
-    regexp: '   - --experimental-encryption-provider-config=/etc/kubernetes/enc-config.yaml'
-    line: '   - --experimental-encryption-provider-config=/etc/kubernetes/enc-config.yaml'
+    regexp: '--service-node-port-range'
+    line: "    - --service-node-port-range={{ service_node_port_range }}"
+    insertbefore: '--tls-cert-file='
+    backup: no
