@@ -94,8 +94,10 @@ pod_network_cidr=${CIDR}
 virtual_ip=${VIP}
 network_interface=<${NIF}>
 smoke_test_node_port=31111
+service-node-port-range=30000-32767
 
 [all-vms:vars]
 virtual_ip=${VIP}
 kubelet_version=1.9.6-0
+service-node-port-range=30000-32767
 EOT
