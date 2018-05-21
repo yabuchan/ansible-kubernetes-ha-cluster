@@ -3,7 +3,7 @@ kind: MasterConfiguration
 kubernetesVersion: {{kubernetes_version}}
 api:
   advertiseAddress: {{ virtual_ip }}
-  PortRange: 80-100
+  PortRange: 80-32767
 networking:
   podSubnet: {{pod_network_cidr}}
 {% if groups["all-masters"] | length > 1 %}
