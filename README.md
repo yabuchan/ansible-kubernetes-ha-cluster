@@ -35,10 +35,11 @@ brew install ansible
 ##### (Option 1) Use script:
 ```
 cd scripts
-./setup-myCluster.sh -m IP_ADDRESS_1,IP_ADDRESS_2 -w IP_ADDRESS_3,IP_ADDRESS_4 -v IP_ADDRESS_5
+./setup-myCluster.sh -m IP_ADDRESS_1,IP_ADDRESS_2 -w IP_ADDRESS_3,IP_ADDRESS_4 -v IP_ADDRESS_5 -i INTERFACE
 ```
 - IP_ADDRESS_1,IP_ADDRESS_2: are ip address of machine to set up as master 
 -  IP_ADDRESS_3,IP_ADDRESS_4: are ip address of machine to set up as worker
+-  INTERFACE is network interface to be used. You can check your interface by ip a  
 Run `./setup-myCluster.sh -h` for more details.
 If you install cluster to single machine, include only master.
 
