@@ -14,3 +14,11 @@
     regexp: '--admission-control='
     replace: '--admission-control=PodPreset,'
     backup: no
+
+- name: Add service-node-port-range to kube-apiserver
+  lineinfile:
+    dest: /etc/kubernetes/manifests/kube-apiserver.yaml
+    regexp: '--service-node-port-range'
+    line: "    - --service-node-port-range={{ service_node_port_range }}"
+    insertbefore: '--tls-cert-file='
+    backup: no

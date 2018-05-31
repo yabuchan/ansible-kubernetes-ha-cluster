@@ -2,8 +2,10 @@
   file:
     path: /etc/kubernetes/pki
     state: directory
+  check_mode: no
 - name: CA cert files from master0 to master1 and master2
   synchronize: 
     src: /etc/kubernetes/pki/etcd 
     dest: /etc/kubernetes/pki
   delegate_to: "{{ groups['all-masters'][0] }}"
+  check_mode: no
