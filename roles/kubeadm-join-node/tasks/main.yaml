@@ -1,4 +1,4 @@
-- name: ca.crt file from master0 to workers
+- name: make directory if not exists
   command: mkdir -p /etc/kubernetes/pki
 
 - name: ca.crt file from master0 to workers
