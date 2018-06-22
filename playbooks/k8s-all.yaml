@@ -7,6 +7,6 @@
 - import_playbook: kubernetes-masters.yaml
 - import_playbook: podpreset.yaml
 - import_playbook: kubernetes-add-workers.yaml
-# - import_playbook: encrypting-secrets.yaml
+- import_playbook: encrypting-secrets.yaml
 - import_playbook: heapster.yaml
 - import_playbook: smoke-test.yaml
