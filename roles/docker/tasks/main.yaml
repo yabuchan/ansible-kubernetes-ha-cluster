@@ -10,7 +10,12 @@
 
 - name: Install container-selinux rpm from a remote repo
   yum:
-    name: http://ns3.centos.org/7.3.1611/extras/x86_64/Packages/container-selinux-2.9-4.el7.noarch.rpm
+    name: docker-ce-17.06.0.ce-1.el7.centos.x86_64
+    state: present
+
+- name: Install container-selinux rpm from a remote repo
+  yum:
+    name: docker-ce-selinux-17.06.0.ce-1.el7.centos.noarch
     state: present
 
 # can be needed in some systems
