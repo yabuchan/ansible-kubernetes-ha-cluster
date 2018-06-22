@@ -17,8 +17,8 @@
 - name: yum-config-manager enable extras
   command: yum-config-manager --enable extras
 
-- name: enable rhel-7-server-extras-rpms
-  command: subscription-manager repos --enable=rhel-7-server-extras-rpms
+#- name: enable rhel-7-server-extras-rpms
+#  command: subscription-manager repos --enable=rhel-7-server-extras-rpms
 
 - name: yum makecache
   command: yum makecache fast
