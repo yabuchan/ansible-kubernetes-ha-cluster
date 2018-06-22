@@ -1,3 +1,9 @@
+- name: ca.crt file from master0 to workers
+  synchronize: 
+    src: /etc/kubernetes/pki/ca.crt 
+    dest: /etc/kubernetes/pki/ca.crt
+  delegate_to: "{{ groups['all-masters'][0] }}"
+
 - name: Read kubeadm init output
   shell: cat {{ kubeadm_join_cmd_file_path }}
   register: kubeadm_join_cmd_file_content
