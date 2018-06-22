@@ -8,6 +8,9 @@
     - lvm2
     - policycoreutils-python
 
+- name: install docker dependencies
+  become: yes
+  command: yum install -y --setopt=obsoletes=0 docker-ce-17.03.1.ce-1.el7.centos docker-ce-selinux-17.03.1.ce-1.el7.centos
 
 #- name: Install container-selinux rpm from a remote repo
 #  yum:
