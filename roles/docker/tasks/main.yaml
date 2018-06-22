@@ -8,10 +8,6 @@
     - lvm2
     - policycoreutils-python
 
-- name: install docker dependencies
-  become: yes
-  command: yum install -y --setopt=obsoletes=0 docker-ce-17.03.1.ce-1.el7.centos docker-ce-selinux-17.03.1.ce-1.el7.centos
-
 #- name: Install container-selinux rpm from a remote repo
 #  yum:
 #    name: ftp://fr2.rpmfind.net/linux/centos/7.3.1611/extras/x86_64/Packages/container-selinux-2.9-4.el7.noarch.rpm
@@ -23,15 +19,6 @@
 #- name: enable rhel-7-server-extras-rpms
 #  command: subscription-manager repos --enable=rhel-7-server-extras-rpms
 
-- name: yum makecache
-  command: yum makecache fast
-
-- name: install container-selinux
-  command: yum -y install container-selinux
- 
-
-
-
 
 
 # can be needed in some systems
@@ -42,10 +29,15 @@
   command: yum-config-manager  --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 
-- name: Installs docker
-  yum: 
-    name: docker-ce # docker in some distros
-    state: installed     
+#- name: Installs docker
+#  yum: 
+#    name: docker-ce # docker in some distros
+#    state: installed     
+
+- name: install docker dependencies
+  become: yes
+  command: yum install -y --setopt=obsoletes=0 docker-ce-17.03.1.ce-1.el7.centos docker-ce-selinux-17.03.1.ce-1.el7.centos
+
 
 - name: restart docker
   systemd: 
