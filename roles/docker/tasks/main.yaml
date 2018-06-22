@@ -9,10 +9,27 @@
     - policycoreutils-python
 
 
-- name: Install container-selinux rpm from a remote repo
-  yum:
-    name: ftp://fr2.rpmfind.net/linux/centos/7.3.1611/extras/x86_64/Packages/container-selinux-2.9-4.el7.noarch.rpm
-    state: present
+#- name: Install container-selinux rpm from a remote repo
+#  yum:
+#    name: ftp://fr2.rpmfind.net/linux/centos/7.3.1611/extras/x86_64/Packages/container-selinux-2.9-4.el7.noarch.rpm
+#    state: present
+
+- name: yum-config-manager enable extras
+  command: yum-config-manager --enable extras
+
+- name: enable rhel-7-server-extras-rpms
+  command: subscription-manager repos --enable=rhel-7-server-extras-rpms
+
+- name: yum makecache
+  command: yum makecache fast
+
+- name: install container-selinux
+  command: yum -y install container-selinux
+ 
+
+
+
+
 
 # can be needed in some systems
 #  - name: Enable extra repos
