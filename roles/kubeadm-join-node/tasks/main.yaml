@@ -1,4 +1,7 @@
 - name: ca.crt file from master0 to workers
+  command: mkdir -p /etc/kubernetes/pki
+
+- name: ca.crt file from master0 to workers
   synchronize: 
     src: /etc/kubernetes/pki/ca.crt 
     dest: /etc/kubernetes/pki/ca.crt
